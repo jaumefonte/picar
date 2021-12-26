@@ -66,7 +66,7 @@ def PrintVersion():
     print("Version 0.0.1")
     
 def PrintHelp():
-    print("exit\t\tCloses program. \nversion\t\tPrints version number. \nlight_red\t\tTint front lights of the robot red.\nlight_green\t\tTint front lights of the robot green.")
+    print("exit\t\tCloses program. \nversion\t\tPrints version number. \nlight_red\tTint front lights of the robot red.\nlight_green\tTint front lights of the robot green.")
 
 def FrontLightsOn():
     print("Front lights ON")
