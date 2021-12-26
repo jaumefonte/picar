@@ -15,7 +15,7 @@ right_B = 25
 on  = GPIO.LOW
 off = GPIO.HIGH
 
-def both_on():
+def LightsBoth_on():
     GPIO.output(left_R, on)
     GPIO.output(left_G, on)
     GPIO.output(left_B, on)
@@ -24,7 +24,7 @@ def both_on():
     GPIO.output(right_G, on)
     GPIO.output(right_B, on)
 
-def setup():#initialization
+def LightsSetup():#initialization
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(left_R, GPIO.OUT)
@@ -33,9 +33,9 @@ def setup():#initialization
     GPIO.setup(right_R, GPIO.OUT)
     GPIO.setup(right_G, GPIO.OUT)
     GPIO.setup(right_B, GPIO.OUT)
-    both_off()
+    LightsBoth_off()
 
-def both_off():
+def LightsBoth_off():
     GPIO.output(left_R, off)
     GPIO.output(left_G, off)
     GPIO.output(left_B, off)
@@ -53,14 +53,14 @@ def PrintHelp():
 
 def FrontLightsOn():
     print("Front lights ON")
-    both_on()
+    LightsBoth_on()
 
 def FrontLightsOff():
     print("Front lights OFF")
-    both_off()
+    LightsBoth_off()
 
 running = True
-setup()
+LightsSetup()
 FrontLightsOn()
 try:    
     while(running):
@@ -77,7 +77,7 @@ except KeyboardInterrupt:
     print("bye")
     
 FrontLightsOff()
-print("PICAR cerrado. Pulsa 'Enter' para salir")
+print("Press 'Enter' to quit PICAR")
 input()
 
     
