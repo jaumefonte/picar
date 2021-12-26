@@ -7,8 +7,8 @@ def PrintHelp():
     print("exit\t\tCloses program. \nversion\t\tPrints version number. \nlight_red\tTint front lights of the robot red.\nlight_green\tTint front lights of the robot green.")
 
 running = True
-FrontLights.LightsSetup()
-FrontLights.LightsBoth_on()
+FrontLights.Setup()
+FrontLights.Both_on()
 try:    
     while(running):
         command = input('PICAR >')
@@ -19,15 +19,15 @@ try:
         elif(command == 'version'):
             PrintVersion()
         elif(command == 'light_red'):
-            FrontLights.LightsRed()
+            FrontLights.ColorRed()
         elif(command == 'light_green'):
-            FrontLights.LightsGreen()
+            FrontLights.ColorGreen()
         else:
             print("'"+command +"' is not a valid command. Type 'help' for available commands.")
 except KeyboardInterrupt:
     print("bye")
     
-FrontLights.LightsBoth_off()
+FrontLights.Both_off()
 print("Press 'Enter' to quit PICAR")
 input()
 
