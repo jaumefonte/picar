@@ -43,13 +43,30 @@ def LightsBoth_off():
     GPIO.output(right_R, off)
     GPIO.output(right_G, off)
     GPIO.output(right_B, off)
+    
+def LightsRed():
+    GPIO.output(left_R, on)
+    GPIO.output(left_G, off)
+    GPIO.output(left_B, off)
 
+    GPIO.output(right_R, on)
+    GPIO.output(right_G, off)
+    GPIO.output(right_B, off)
+
+def LightsGreen():
+    GPIO.output(left_R, off)
+    GPIO.output(left_G, on)
+    GPIO.output(left_B, off)
+
+    GPIO.output(right_R, off)
+    GPIO.output(right_G, on)
+    GPIO.output(right_B, off)
 
 def PrintVersion():
     print("Version 0.0.1")
     
 def PrintHelp():
-    print("exit\t\tCloses program. \nversion\t\tPrints version number.")
+    print("exit\t\tCloses program. \nversion\t\tPrints version number. \nlight_red\t\tTint front lights of the robot red.\nlight_green\t\tTint front lights of the robot green.")
 
 def FrontLightsOn():
     print("Front lights ON")
@@ -71,6 +88,10 @@ try:
             PrintHelp()
         elif(command == 'version'):
             PrintVersion()
+        elif(command == 'light_red'):
+            LightsRed()
+        elif(command == 'light_green'):
+            LightsGreen()
         else:
             print("'"+command +"' is not a valid command. Type 'help' for available commands.")
 except KeyboardInterrupt:
