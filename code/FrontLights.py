@@ -12,7 +12,7 @@ right_B = 25
 on  = GPIO.LOW
 off = GPIO.HIGH
 
-def LightsBoth_on():
+def Both_on():
     GPIO.output(left_R, on)
     GPIO.output(left_G, on)
     GPIO.output(left_B, on)
@@ -21,7 +21,7 @@ def LightsBoth_on():
     GPIO.output(right_G, on)
     GPIO.output(right_B, on)
 
-def LightsSetup():#initialization
+def Setup():#initialization
     GPIO.setwarnings(False)
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(left_R, GPIO.OUT)
@@ -30,9 +30,9 @@ def LightsSetup():#initialization
     GPIO.setup(right_R, GPIO.OUT)
     GPIO.setup(right_G, GPIO.OUT)
     GPIO.setup(right_B, GPIO.OUT)
-    LightsBoth_off()
+    Both_off()
 
-def LightsBoth_off():
+def Both_off():
     GPIO.output(left_R, off)
     GPIO.output(left_G, off)
     GPIO.output(left_B, off)
@@ -41,7 +41,7 @@ def LightsBoth_off():
     GPIO.output(right_G, off)
     GPIO.output(right_B, off)
     
-def LightsRed():
+def ColorRed():
     GPIO.output(left_R, on)
     GPIO.output(left_G, off)
     GPIO.output(left_B, off)
@@ -50,7 +50,7 @@ def LightsRed():
     GPIO.output(right_G, off)
     GPIO.output(right_B, off)
 
-def LightsGreen():
+def ColorGreen():
     GPIO.output(left_R, off)
     GPIO.output(left_G, on)
     GPIO.output(left_B, off)
